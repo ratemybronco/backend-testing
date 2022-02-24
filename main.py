@@ -18,5 +18,9 @@ def professors():
 def courses():
   return "Courses Page"
 
+@app.route("/courses/ratings")
+def courses():
+  return "Ratings Page"
+
 if __name__ == "__main__":
   app.run()
