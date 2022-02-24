@@ -26,5 +26,9 @@ def ratings():
 def grades():
   return "Grade Disbursement Page"
 
+@app.route("/search")
+def search():
+  return "Search Request"
+
 if __name__ == "__main__":
   app.run()
