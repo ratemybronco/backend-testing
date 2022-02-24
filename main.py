@@ -19,8 +19,12 @@ def courses():
   return "Courses Page"
 
 @app.route("/courses/ratings")
-def courses():
+def ratings():
   return "Ratings Page"
+
+@app.route("/grade-disbursements")
+def grades():
+  return "Grade Disbursement Page"
 
 if __name__ == "__main__":
   app.run()
