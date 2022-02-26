@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, render_template, request
 from pymongo import MongoClient
 
 # mongodb client
@@ -26,9 +26,22 @@ def ratings():
 def grades():
   return "Grade Disbursement Page"
 
-@app.route("/search")
+names = [] # To be replaced with database access
+@app.route("/search", methods=["GET","POST"])
 def search():
-  return "Search Request"
+  if request.method == "GET":
+    return render_template("search.html", professors=names)
+    
+  professor = request.form.get("professor")
+  if not professor:
+    return "output blank"
+  names.append(professor)
+  return redirect("/search")
+  #return redirect(f"/result/{professor}")
+
+@app.route("/result/<name>", methods=["GET"])
+def result(name):
+  return render_template("result.html", name=name)
 
 if __name__ == "__main__":
   app.run()

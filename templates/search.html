@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <title>Search</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Search Professors</h1>
+    <form action="/search" method="post">
+        <input name="professor" placeholder="Professor" type="text">
+        <input type="submit" value="Search"> 
+    </form>
+
+    <ul>
+        {% for professor in professors %}
+           <li>{{ professor }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
