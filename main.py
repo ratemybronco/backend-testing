@@ -1,5 +1,11 @@
 from flask import Flask, redirect, render_template, request
 from pymongo import MongoClient
+import numpy as np
+from sklearn.datasets import load_iris
+import pandas as pd
+ 
+
+
 import requests
 
 # mongodb client
@@ -25,7 +31,11 @@ def ratings():
 
 @app.route("/grade-disbursements")
 def grades():
-  return "Grade Disbursement Page"
+  # Loading irirs dataset
+  data = load_iris()
+  df = pd.DataFrame(data.data,columns = data.feature_names)
+  
+  return f"Grade Disbursement Page{display(df)}"
 
 names = [] # To be replaced with database access
 @app.route("/search", methods=["GET","POST"])
