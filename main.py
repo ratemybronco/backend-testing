@@ -8,8 +8,9 @@ import numpy as np
 from sklearn.datasets import load_iris
 import pandas as pd
 import matplotlib as plt
-import requests
 import mysql.connector
+from flask_debugtoolbar import DebugToolbarExtension
+import os
 
 # mongodb client
 client = MongoClient(host="localhost", port=5000)
@@ -19,18 +20,22 @@ mycursor = ratemybroncoDB.cursor()
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = os.getenv("key")
+
+app.debug = True
+
+toolbar = DebugToolbarExtension(app)
+
 @app.route("/")
 def landing():
   return render_template("index.html")
 
 @app.route("/professors")
 def professors():
-  #return "Professors Page"
-  def professors():
-    mycursor.execute("SELECT * FROM Professor")
-    myresult = mycursor.fetchall()
-    for i in myresult:
-        print(i)
+  mycursor.execute("SELECT * FROM Professor")
+  myresult = mycursor.fetchall()
+  for i in myresult:
+    print(i)
         
 
 @app.route("/courses")
