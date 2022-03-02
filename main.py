@@ -9,9 +9,13 @@ from sklearn.datasets import load_iris
 import pandas as pd
 import matplotlib as plt
 import requests
+import mysql.connector
 
 # mongodb client
 client = MongoClient(host="localhost", port=5000)
+
+ratemybroncoDB = mysql.connector.connect(host="localhost", user="root", database="ratemybronco")
+mycursor = ratemybroncoDB.cursor()
 
 app = Flask(__name__)
 
@@ -21,7 +25,13 @@ def landing():
 
 @app.route("/professors")
 def professors():
-  return "Professors Page"
+  #return "Professors Page"
+  def professors():
+    mycursor.execute("SELECT * FROM Professor")
+    myresult = mycursor.fetchall()
+    for i in myresult:
+        print(i)
+        
 
 @app.route("/courses")
 def courses():
