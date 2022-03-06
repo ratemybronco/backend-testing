@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask, redirect, render_template, request
 import base64
 from io import BytesIO
@@ -12,8 +13,6 @@ import mysql.connector
 from flask_debugtoolbar import DebugToolbarExtension
 import os
 
-# mongodb client
-client = MongoClient(host="localhost", port=5000)
 
 ratemybroncoDB = mysql.connector.connect(host="localhost", user="root", database="ratemybronco")
 mycursor = ratemybroncoDB.cursor()
@@ -32,7 +31,7 @@ def landing():
 
 @app.route("/professors")
 def professors():
-  mycursor.execute("SELECT * FROM Professor")
+  mycursor.execute("SELECT * FROM Professor") # get all th professors -> make this better
   myresult = mycursor.fetchall()
   for i in myresult:
     print(i)
@@ -42,9 +41,11 @@ def professors():
 def courses():
   return "Courses Page"
 
-@app.route("/courses/ratings")
+
+@app.route("/courses/card")
 def ratings():
-  return "Ratings Page"
+  return "Handle the Cards combination of each professor and class that are going to be unique"
+
 
 @app.route("/grade-disbursements")
 def grades():
@@ -69,8 +70,9 @@ def grades():
 
   return f"Grade Disbursement Page {display(df)} <img src='data:image/png;base64,{data}'/>"
 
+
 names = [] # To be replaced with database access
-@app.route("/search", methods=["GET","POST"])
+@app.route("/search", methods=["GET","POST"]) 
 def search():
   if request.method == "GET":
     return render_template("search.html", professors=names)
@@ -78,13 +80,31 @@ def search():
   professor = request.form.get("professor")
   if not professor:
     return "output blank"
+
   names.append(professor)
+
   return redirect("/search")
   #return redirect(f"/result/{professor}")
 
-@app.route("/result/<name>", methods=["GET"])
-def result(name):
-  return render_template("result.html", name=name)
+
+
+@app.route("/add-rating", methods=["POST"])
+def add_rating():
+  # get all the data from the field
+  ProfessorName = request.form.get("ProfessorName")
+  Class = request.form.get("Class")
+  Semester = request.form.get("Semester")
+  Rating = request.form.get("Rating")
+  Comment = request.form.get("Comment")
+  
+  # no need to call an html or redirect
+  # compile it into a csv
+  user_rating = f'"{ProfessorName}" , "{Class}", "{Semester}", "{Rating}", "{Comment}"' # put in format with commas so we can add it as an sql_command
+  sql_command  = f"INSERT INTO cards (ProfessorName, Class, Semester, Rating, Comment) VALUES ({user_rating});" # add a new row into cards table which we will need to create.
+
+  # Execute this command, expecting no returns.
+  mycursor.execute(sql_command)
+
 
 if __name__ == "__main__":
   app.run()
