@@ -84,12 +84,18 @@ def search():
   names.append(professor)
 
   return redirect("/search")
-  #return redirect(f"/result/{professor}")
 
+@app.route("/review", methods=["GET"])
+def review():
+  return "Review form" #Replace with Review Page
 
+@app.route("/submitted", method=["GET"])
+def submitted():
+  return "Thank You" 
 
 @app.route("/add-rating", methods=["POST"])
 def add_rating():
+  # Add server side checking
   # get all the data from the field
   ProfessorName = request.form.get("ProfessorName")
   Class = request.form.get("Class")
