@@ -19,8 +19,8 @@ app = Flask(__name__)
 
 
 ### MySQL connector and set up
-ratemybroncoDB = mysql.connector.connect(host="localhost", user="root", database="ratemybronco")
-mycursor = ratemybroncoDB.cursor()
+# ratemybroncoDB = mysql.connector.connect(host="localhost", user="root", database="ratemybronco")
+# mycursor = ratemybroncoDB.cursor()
 
 
 ### Landing page routing
