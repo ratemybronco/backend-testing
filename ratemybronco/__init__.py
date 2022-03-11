@@ -1,4 +1,4 @@
-from crypt import methods
+# from crypt import methods
 from flask import Flask, redirect, render_template, request
 import base64
 from io import BytesIO
@@ -9,7 +9,7 @@ import numpy as np
 from sklearn.datasets import load_iris
 import pandas as pd
 import matplotlib as plt
-import mysql.connector
+# import mysql.connector
 from flask_debugtoolbar import DebugToolbarExtension
 import os
 
@@ -19,8 +19,8 @@ app = Flask(__name__)
 
 
 ### MySQL connector and set up
-ratemybroncoDB = mysql.connector.connect(host="localhost", user="root", database="ratemybronco")
-mycursor = ratemybroncoDB.cursor()
+# ratemybroncoDB = mysql.connector.connect(host="localhost", user="root", database="ratemybronco")
+# mycursor = ratemybroncoDB.cursor()
 
 
 ### Landing page routing
@@ -76,7 +76,7 @@ def add_rating():
   mycursor.execute(sql_command)
 
 ### Thank you page or the submitted page
-@app.route("/submitted", method=["GET"])
+@app.route("/submitted", methods=["GET"])
 def submitted():
   return "Thank You" 
 
@@ -109,4 +109,4 @@ def grades():
 
 ### Run if main
 if __name__ == "__main__":
-  app.run(DEBUG=True)
+  app.run(debug=True)
