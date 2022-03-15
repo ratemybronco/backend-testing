@@ -20,7 +20,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Rate My Bronco</a>
+        <a class="navbar-brand" href='{{ url_for("landing") }}'>Rate My Bronco</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"> </span>
         </button>
@@ -30,7 +30,7 @@
               <a class="nav-link" href='{{ url_for("search") }}'>Search Ratings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="addRating.html">Add Ratings</a>
+              <a class="nav-link" href='{{ url_for("add_rating") }}'>Add Ratings</a>
             </li>
           </ul>
         </div>
@@ -47,7 +47,7 @@
           </div>
         </div>
       </a>
-      <a class="col-6 col-md-6 grow" href="addRating.html">
+      <a class="col-6 col-md-6 grow" href='{{ url_for("add_rating") }}'>
         <div class="right-title">
           <h1>Add Rating</h1>
         </div>
