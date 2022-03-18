@@ -1,6 +1,6 @@
 body {
   background-color: white;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: "Roboto", sans-serif !important;
   font-weight: 700 !important;
   /* font-size: 14px; */
 }
@@ -48,4 +48,23 @@ a {
   background-color: white;
   border-radius: 2em;
   color: gray;
+}
+
+.footer-copyright {
+  font-size: large;
+  margin-bottom: 20px;
+  color: grey;
+}
+
+.about-us {
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+}
+
+.footer-white {
+  padding-top: 10px;
+  height: 130px;
+  background-color: white;
+  border-top: 10px solid #70ba8f;
 }

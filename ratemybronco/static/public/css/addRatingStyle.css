@@ -1,7 +1,7 @@
 body {
   background-color: white;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  /* font-size: 14px; */
 }
 
 h1 {
@@ -98,4 +98,23 @@ h1 {
   margin-top: 20px;
   height: 4rem;
   box-shadow: 0 0 10px grey;
+}
+
+.footer-copyright {
+  font-size: large;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.about-us {
+  font-size: 25px;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+}
+
+.footer-green {
+  padding-top: 10px;
+  height: 130px;
+  background-color: #70ba8f;
+  /* border-top: 10px solid white; */
 }

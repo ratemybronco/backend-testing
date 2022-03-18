@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/addRatingStyle.css" />
+    <link rel="stylesheet" href="../static/public/css/addRatingStyle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Rubik:wght@300&family=Shippori+Antique+B1&display=swap" rel="stylesheet"> -->
@@ -26,6 +26,9 @@
       integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
     <title>Rate My Bronco</title>
   </head>
   <body>
@@ -106,6 +109,26 @@
         </div>
       </form>
     </fieldset>
-    <script src="../static/js/rating.js"></script>
+    <div id="footer"></div>
+
+      <script type="text/babel">
+      function Footer () {
+        const currentYear = new Date().getFullYear();
+        return (
+          <div className=" footer-green text-center text-white">
+              <footer >
+                  <p className="about-us">  About Us  </p>
+                  <p className="footer-copyright"> Copyright  © {currentYear} Rate My Bronco </p>
+              </footer>
+              </div>
+          );
+      }
+
+      ReactDOM.render (
+          <Footer />, 
+          document.getElementById("footer")
+          );
+    </script>
+    <!-- <script src="../static/src/index.js" type="text/jsx"></script> -->
   </body>
 </html>

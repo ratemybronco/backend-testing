@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/public/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Rubik:wght@300&family=Shippori+Antique+B1&display=swap" rel="stylesheet" />
@@ -15,6 +15,9 @@
       crossorigin="anonymous"
     />
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js" charset="utf-8"></script>
     <title>Rate My Bronco</title>
   </head>
   <body>
@@ -53,5 +56,32 @@
         </div>
       </a>
     </div>
+    <!-- footer -->
+    <div id="footer"></div>
+
+      <script type="text/babel">
+      function Footer () {
+        const currentYear = new Date().getFullYear();
+        return (
+          <div className=" footer-white text-center text-black">
+              <footer >
+                  <p className="about-us">  About Us  </p>
+                  <p className="footer-copyright"> Copyright  © {currentYear} Rate My Bronco </p>
+              </footer>
+              </div>
+          );
+      }
+
+      ReactDOM.render (
+          <Footer />, 
+          document.getElementById("footer")
+          );
+    </script>
+      
+
+
+    
+    
+    <!-- <script src="ratemybronco/templates/src/index.js" type="text/babel"></script> -->
   </body>
 </html>
