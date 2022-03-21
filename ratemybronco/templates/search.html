@@ -73,22 +73,19 @@
 
     <div id="footer"></div>
     <script type="text/babel">
-    function Footer () {
-      const currentYear = new Date().getFullYear();
-      return (
-        <div className=" footer-white text-center text-black">
-            <footer >
-                <p className="about-us">  About Us  </p>
-                <p className="footer-copyright"> Copyright  © {currentYear} Rate My Bronco </p>
+      function Footer() {
+        const currentYear = new Date().getFullYear();
+        return (
+          <div className=" footer-white text-center text-black">
+            <footer>
+              <p className="about-us"> About Us </p>
+              <p className="footer-copyright"> Copyright © {currentYear} Rate My Bronco </p>
             </footer>
-            </div>
+          </div>
         );
-    }
+      }
 
-    ReactDOM.render (
-        <Footer />, 
-        document.getElementById("footer")
-        );
-  </script>
+      ReactDOM.render(<Footer />, document.getElementById("footer"));
+    </script>
   </body>
 </html>

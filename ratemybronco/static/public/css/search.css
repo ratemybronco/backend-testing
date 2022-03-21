@@ -41,10 +41,8 @@ a {
 
 .container {
   margin: 2em;
-  margin-left: 3% !important;
   padding: 1em;
   height: 20vh;
-  width: 60em !important;
   background-color: white;
   border-radius: 2em;
   color: gray;
