@@ -1,0 +1,101 @@
+body {
+  background-color:  #70ba8f !important;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 700 !important;
+  /* font-size: 14px; */
+  }
+  
+h1 {
+  font-weight: 20;
+  font-size: 4em !important;
+  line-height: 1.3em;
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+/* navigation bar */
+.navbar {
+  position: fixed;
+}
+.navbar-nav {
+  margin-left: auto;
+}
+
+/* content */
+.col {
+  padding-top: 8vh;
+  margin: 10%;
+}
+
+/* footer */
+.footer-white {
+  padding: 1vh;
+  height: 7vh;
+  background-color: white;
+}
+
+.footer-copyright {
+  font-size: 1vh;
+  font-weight: bold;
+  /* margin-bottom: 20px; */
+  color: grey;
+}
+
+.about-us {
+  font-size: 2vh;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  color:grey;
+}
+
+/* buttons */
+
+.button{
+  display: inline-block;
+  text-decoration: none !important;
+  color: white;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 18px;
+}
+
+a.button:before,
+a.button:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+a.button:before {
+  top: -2.5%;
+  left: -1%;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+}
+a.button:after {
+  bottom: -2.5%;
+  right: -1%;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+a.button:hover:before,
+a.button:hover:after {
+  width: 102%;
+  height: 100%;
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none !important;
+  color: #fff;
+}
+  

@@ -48,21 +48,22 @@ a {
   color: gray;
 }
 
+.footer-white {
+  padding: 1vh;
+  height: 7vh;
+  background-color: white;
+}
+
 .footer-copyright {
-  font-size: large;
-  margin-bottom: 20px;
+  font-size: 1vh;
+  font-weight: bold;
+  /* margin-bottom: 20px; */
   color: grey;
 }
 
 .about-us {
-  font-size: 25px;
+  font-size: 2vh;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
-}
-
-.footer-white {
-  padding-top: 10px;
-  height: 130px;
-  background-color: white;
-  border-top: 10px solid #70ba8f;
+  color:grey;
 }

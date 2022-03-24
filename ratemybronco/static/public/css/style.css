@@ -60,23 +60,23 @@ a {
 }
 
 .footer-white {
-  padding-top: 10px;
-  height: 130px;
+  padding: 1vh;
+  height: 7vh;
   background-color: white;
-  border-top: 3px solid #70ba8f;
 }
 
 .footer-copyright {
-  font-size: large;
+  font-size: 1vh;
   font-weight: bold;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   color: grey;
 }
 
 .about-us {
-  font-size: 30px;
+  font-size: 2vh;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
+  color:grey;
 }
 
 /* .footer-green {
